@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game update</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+	.container {
+	  position: relative;
+	  text-align: center;
+	  font-family: Arial;
+	  font-size: 8vw;
+	  background-color: white;
+	  color: black;	}
+
+	.previous-games {
+	  font-family: Arial;
+	  font-size: 8vw;
+	  background-color: white;
+	  color: black;	}
+	  
+	/* Bottom left text */
+	.bottom-left {
+	  position: absolute;
+	  bottom: 8px;
+	  left: 16px;
+	}
+
+	/* Top left text */
+	.top-left-guest-score {
+	  position: absolute;
+	  top: 2%;
+	  left: 10%;
+	}
+
+	/* Top left text */
+	.top-left-guest-name {
+	  position: absolute;
+	  top: -15%;
+	  left: 5%;
+	  color: white;
+	  font-size: 7vw;
+	}
+
+	/* Top left text */
+	.top-left-home-name {
+	  position: absolute;
+	  top: -15%;
+	  left: 78%;
+	  color: white;
+	  font-size: 7vw;
+	}
+
+	/* Top right text */
+	.top-right-home-score {
+	  position: absolute;
+	  top: 2%;
+	  right: 10%;
+	}
+
+	/* Centered text */
+	.centered-time {
+	  position: absolute;
+	  top: 20%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	} 
+
+	/* Centered text */
+	.centered-period {
+	  position: absolute;
+	  top: 75%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}   
+	
+</style>
+<script type = "text/javascript" src="/socket.io/socket.io.js"></script>
+<script type = "text/javascript" src="/scripts/functions.js"></script>
+
+</head>
+  <body>
+   <div class="container">
+		<img src="/images/scoreboard-notitle.png" alt="scoreboard" style="width:100%;">
+		<div class="top-left-guest-name">
+			<h4 id="guestName"></h4>
+		</div>
+		<div class="top-left-home-name">
+			<h4 id="homeName"></h4>
+		</div>
+		<div class="top-left-guest-score">
+			<h4 id="guestScore"></h4>
+		</div>
+		<div class="top-right-home-score">
+			<h4 id="homeScore"></h4>
+		</div>
+		<div class="centered-time">
+			<h4 id="remainingTime"></h4>
+		</div>
+		<div class="centered-period">
+			<h4 id="period"></h4>
+		</div>
+
+
+	</div> 
+	<div>
+		<h1 id="title"></h1>
+		<p class="previous-games" id="messages"></p>
+		</div>
+  
+    <script>do_scoreboard()</script>
+  </body>
+</html>
